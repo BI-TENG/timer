@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setTimeout() 可以在延遲一段時間後執行 function
+        // () 內先放要執行的 function，後面接延遲毫秒數，1000 代表一秒
+        // 使用匿名函式
+        // setTimeout(() => {
+        //     alert("過五秒了");
+        // }, 5000)
+
+        // 使用已定義好的函式  function
+        const msg = (sec) => {
+            alert(`過 ${sec} 秒了`);
+        }
+        // setTimeout(function,毫秒,傳入 function 的第一個東西,傳入 function 的第二個東西...)
+        setTimeout(msg, 5000, 5);
+    </script>
+
+
+</body>
+
+</html>
