@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="text" style="color:blue"></h1>
+  <script>
+    const text = document.getElementById("text");
+    const input = prompt("輸入秒數");
+    let num = parseInt(input);
+
+    // 如果 prompt 按取消的話是 null
+    // https://pbs.twimg.com/media/DusCOfyXcAA9_F7.jpg
+    if(isNaN(input) || num <= 0 || input === null) {
+      alert("請輸入正整數");
+    }
+    else {
+      text.innerText = `剩餘 ${num} 秒`;
+
+      let timer = setInterval(()=>{
+        num--;
+        if(num == 0) {
+          text.style.color = "red";
+          clearInterval(timer);
+          text.innerText = "時間到";
+        }
+        else {
+          text.innerText = `剩餘 ${num} 秒`;
+        }
+      }, 1000)
+    }
+  </script>
+</body>
+</html>
